@@ -1,1 +1,161 @@
-<div id="highcharts"></div>
+<div class="chart-container">
+  <hcplot options="Highcharts.options"></hcplot>
+</div>
+
+<div class="configuration-container">
+  <div class="row full-width">
+    <div class="column medium-6 large-8 tools-container">
+      <!-- General configuration -->
+      <div class="row">
+        <div class="column">
+          <fieldset>
+            <legend>General configuration</legend>
+            <div class="row">
+              <div class="column medium-9">
+                <select ng-model="Highcharts.options.chart.type">
+                  <option ng-repeat="option in Highcharts.allowedTypes" ng-value="option.value">{{option.name}}</option>
+                </select>
+
+                <div class="row">
+                  <div class="column small-6">
+                    <input type="number" ng-model="Highcharts.options.chart.width" placeholder="Width (px)">
+                  </div>
+                  <div class="column small-6">
+                    <input type="number" ng-model="Highcharts.options.chart.height" placeholder="Height (px)">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="small-3 columns">
+                    <label for="field-background-color" class="text-right">Background color</label>
+                  </div>
+                  <div class="small-9 columns">
+                    <input type="color" id="field-background-color" ng-model="Highcharts.options.chart.backgroundColor">
+                  </div>
+                </div>
+              </div>
+              <div class="column medium-3">
+                <div class="row">
+                  <div class="column">
+                    <input type="checkbox" ng-model="Highcharts.options.chart.animation" id="checkbox-animation">
+                    <label for="checkbox-animation">Animation</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="column">
+                    <input type="checkbox" ng-model="Highcharts.options.chart.inverted" id="checkbox-inverted">
+                    <label for="checkbox-inverted">Inverted</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="column">
+                    <input type="checkbox" ng-model="Highcharts.options.chart.shadow" id="checkbox-shadow">
+                    <label for="checkbox-shadow">Shadow</label>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="column">
+                    <input type="checkbox" ng-model="Highcharts.options.legend.enabled" id="checkbox-legend">
+                    <label for="checkbox-legend">Legend</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <!-- Titles -->
+      <div class="row">
+        <div class="column">
+          <fieldset>
+            <legend>Titles</legend>
+            <div class="row">
+              <div class="column medium-6">
+                <input type="text" placeholder="Title" ng-model="Highcharts.options.title.text"/>
+              </div>
+              <div class="column medium-6">
+                <input type="text" placeholder="Subtitle" ng-model="Highcharts.options.subtitle.text"/>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="column medium-6">
+                <div class="rounded button-group">
+                  <button ng-click="Highcharts.setTitleAlign('left')">Left</button>
+                  <button ng-click="Highcharts.setTitleAlign('center')">Center</button>
+                  <button ng-click="Highcharts.setTitleAlign('right')">Right</button>
+                </div>
+              </div>
+              <div class="column medium-6">
+                <div class="rounded button-group">
+                  <button ng-click="Highcharts.setSubTitleAlign('left')" ng-disabled="Highcharts.options.subtitle.text == ''">Left</button>
+                  <button ng-click="Highcharts.setSubTitleAlign('center')" ng-disabled="Highcharts.options.subtitle.text == ''">Center</button>
+                  <button ng-click="Highcharts.setSubTitleAlign('right')" ng-disabled="Highcharts.options.subtitle.text == ''">Right</button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+
+      <!-- Series -->
+      <div class="row">
+        <div class="column">
+          <fieldset>
+            <legend>Data</legend>
+
+            <div class="row">
+              <div class="column">
+                <tabset>
+                  <tab>
+                    <tab-heading><input type="checkbox" ng-model="Highcharts.series[0].enabled" style="margin-bottom: 0"/>&nbsp;Serie1</tab-heading>
+                    <div class="row">
+                      <div class="column medium-9">
+                        <table>
+                          <tr>
+                            <th></th>
+                            <th>Abscisses</th>
+                            <th>Ordonnées</th>
+                          </tr>
+                          <tr ng-repeat="index in [0,1,2,3,4,5,6,7,8,9,10,11]">
+                            <th>{{ index + 1 }}</th>
+                            <td><input type="text" ng-model="Highcharts.options.xAxis.categories[index]" style="margin-bottom: 0"/></td>
+                            <td><input type="number" ng-model="Highcharts.options.series[0].data[index]" style="margin-bottom: 0"/></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <div class="column medium-3">
+                        <div class="row">
+                          <div class="column">
+                            <input type="checkbox" ng-model="Highcharts.options.series[0].marker.enabled" id="checkbox-serie0-markers">
+                            <label for="checkbox-serie0-markers">Markers</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </tab>
+                  <tab>
+                    <tab-heading><input type="checkbox" ng-model="Highcharts.series[1].enabled" style="margin-bottom: 0"/>&nbsp;Serie2</tab-heading>
+                    <pre>{{ Highcharts.options.series[0].data }}</pre>
+                  </tab>
+                  <tab>
+                    <tab-heading><input type="checkbox" ng-model="Highcharts.series[2].enabled" style="margin-bottom: 0"/>&nbsp;Serie3</tab-heading>
+                    <pre>{{ Highcharts.options.series[0].data }}</pre>
+                  </tab>
+                </tabset>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <div class="column medium-6 large-4 json-container">
+      <pre>{{ Highcharts.options | json }}</pre>
+    </div>
+  </div>
+</div>

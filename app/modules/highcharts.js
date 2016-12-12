@@ -1,13 +1,89 @@
 angular
   .module('demoApp')
   .controller('HighchartsCtrl', function() {
-    Highcharts.chart('highcharts', {
+    var self = this;
+    var generateValue = function() {
+      return parseFloat((Math.random()*100).toFixed(2));
+    };
+    var generateValues = function(chartType) {
+      if (chartType === 'line') {
+        return [
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue(),
+          generateValue()
+        ]
+      }
+    };
+
+
+    this.allowedTypes = [
+      { name: 'line', value: 'line' },
+      { name: 'curve', value: 'spline' },
+      { name: 'histogramme', value: 'bar' },
+      { name: 'camembert', value: 'pie' },
+      { name: 'surface', value: 'area' }
+    ];
+
+    this.series = [
+      { enabled: true,  values: generateValues('line'), markers: true },
+      { enabled: false, values: generateValues('line'), markers: true },
+      { enabled: false, values: generateValues('line'), markers: true }
+    ];
+
+    this.options = {
+      chart: {
+        type: 'line',
+        animation: true,
+        inverted: false,
+        shadow: false,
+        width: null,
+        height: null,
+        backgroundColor: '#FFFFFF'
+      },
+
+      title: {
+        align: 'center',
+        text: "Default title"
+      },
+
+      subtitle: {
+        align: 'center',
+        text: ''
+      },
+
+      legend: {
+        enabled: true
+      },
+
       xAxis: {
         categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
       },
 
-      series: [{
-        data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-      }]
-    });
+      series: [
+        {
+          data: generateValues('line'),
+          marker: {
+            enabled: true
+          }
+        }
+      ]
+    };
+
+    this.setTitleAlign = function(position) {
+      this.options.title.align = position;
+    };
+
+    this.setSubTitleAlign = function(position) {
+      this.options.subtitle.align = position;
+    };
+
   });
