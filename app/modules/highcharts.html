@@ -1,6 +1,4 @@
-<div class="chart-container">
-  <hcplot options="Highcharts.options"></hcplot>
-</div>
+<hcplot class="chart-container" options="Highcharts.options"></hcplot>
 
 <div class="configuration-container">
   <div class="row full-width">
@@ -154,7 +152,7 @@
       </div>
     </div>
 
-    <div class="column medium-6 large-4 json-container">
+    <div class="column hide-for-small medium-6 large-4 json-container">
       <pre>{{ Highcharts.options | json }}</pre>
     </div>
   </div>
