@@ -22,6 +22,14 @@ main {
   overflow-y: auto;
 }
 
+.json-container {
+  font-size: 80%;
+  line-height: 16px;
+  background-color: #F7F8F9;
+  border: 1px solid #CACACA;
+  border-radius: 3px;
+}
+
 button {
   margin-bottom: 0 !important;
 }

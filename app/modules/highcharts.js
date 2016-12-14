@@ -24,6 +24,7 @@ angular
       }
     };
 
+    this.animated = true;
 
     this.allowedTypes = [
       { name: 'line', value: 'line' },
@@ -42,7 +43,7 @@ angular
     this.options = {
       chart: {
         type: 'line',
-        animation: true,
+        // animation: true,
         inverted: false,
         shadow: false,
         width: null,
@@ -70,6 +71,7 @@ angular
 
       series: [
         {
+          animation: true,
           data: generateValues('line'),
           marker: {
             enabled: true
@@ -86,4 +88,10 @@ angular
       this.options.subtitle.align = position;
     };
 
+    this.toggleAnimation = function() {
+      this.options.series.map(function(serie) {
+        self.animated = !self.animated;
+        return serie.animation = self.animated;
+      })
+    };
   });
