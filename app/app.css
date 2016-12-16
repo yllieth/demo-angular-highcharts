@@ -42,3 +42,7 @@ a.disabled {
   cursor: not-allowed !important;
   opacity: .5;
 }
+
+dl.tabs {
+  border-bottom: 1px solid #CACACA;
+}

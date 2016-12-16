@@ -110,22 +110,16 @@
               <div class="column">
                 <tabset>
                   <tab>
-                    <tab-heading><input type="checkbox" ng-model="Highcharts.series[0].enabled" style="margin-bottom: 0"/>&nbsp;Serie1</tab-heading>
+                    <tab-heading>
+                      {{ Highcharts.options.series[0].name || 'Series 1' }}
+                    </tab-heading>
                     <div class="row">
                       <div class="column medium-7 large-9">
-
-                        <!-- Generate new data values -->
-                        <div class="row">
-                          <div class="column">
-                            <a href ng-click="Highcharts.newData(0)">Generate new coordinates</a>
-                          </div>
-                        </div>
-
                         <table>
                           <tr>
                             <th></th>
                             <th>Abscisses</th>
-                            <th>Ordonnées</th>
+                            <th>Ordonnées <small><a href ng-click="Highcharts.newData(0)">Re-generate</a></small></th>
                           </tr>
                           <tr ng-repeat="index in [0,1,2,3,4,5,6,7,8,9,10,11]">
                             <th>{{ index + 1 }}</th>
@@ -189,12 +183,12 @@
                     </div>
                   </tab>
                   <tab>
-                    <tab-heading><input type="checkbox" ng-model="Highcharts.series[1].enabled" style="margin-bottom: 0"/>&nbsp;Serie2</tab-heading>
-                    <pre>{{ Highcharts.options.series[0].data }}</pre>
+                    <tab-heading>{{ Highcharts.options.series[1].name || 'Series 2' }}</tab-heading>
+                    <pre>{{ Highcharts.options.series[1].data }}</pre>
                   </tab>
                   <tab>
-                    <tab-heading><input type="checkbox" ng-model="Highcharts.series[2].enabled" style="margin-bottom: 0"/>&nbsp;Serie3</tab-heading>
-                    <pre>{{ Highcharts.options.series[0].data }}</pre>
+                    <tab-heading>{{ Highcharts.options.series[2].name || 'Series 3' }}</tab-heading>
+                    <pre>{{ Highcharts.options.series[2].data }}</pre>
                   </tab>
                 </tabset>
               </div>
