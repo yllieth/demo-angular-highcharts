@@ -145,7 +145,7 @@
                         <!-- Name -->
                         <div class="row align-justify">
                           <div class="column small-6"><label for="input-serie0-name">Name:</label></div>
-                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetName(0)" ng-class="{disabled: Highcharts.options.series[0].name === undefined}">Reset</a></small></div>
+                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetSerieProperty(0, 'name')" ng-class="{disabled: Highcharts.options.series[0].name === undefined}">Reset</a></small></div>
                         </div>
                         <div class="row">
                           <div class="column">
@@ -156,7 +156,7 @@
                         <!-- Color -->
                         <div class="row align-justify">
                           <div class="column small-6"><label for="input-serie0-color">Color:</label></div>
-                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetColor(0)" ng-class="{disabled: Highcharts.options.series[0].color === undefined}">Reset</a></small></div>
+                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetSerieProperty(0, 'color')" ng-class="{disabled: Highcharts.options.series[0].color === undefined}">Reset</a></small></div>
                         </div>
                         <div class="row">
                           <div class="column">
@@ -167,7 +167,7 @@
                         <!-- line style -->
                         <div class="row align-justify">
                           <div class="column small-6"><label for="input-serie0-style">Style:</label></div>
-                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetStyle(0)" ng-class="{disabled: Highcharts.options.series[0].dashStyle === undefined}">Reset</a></small></div>
+                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetSerieProperty(0, 'dashStyle')" ng-class="{disabled: Highcharts.options.series[0].dashStyle === undefined}">Reset</a></small></div>
                         </div>
                         <div class="row">
                           <div class="column">

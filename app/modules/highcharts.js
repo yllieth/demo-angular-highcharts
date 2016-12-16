@@ -115,15 +115,7 @@ angular
       self.options.series[serieIndex].data = generateValues(self.options.chart.type);
     };
 
-    this.resetColor = function(serieIndex) {
-      self.options.series[serieIndex].color = undefined;
-    };
-
-    this.resetStyle = function(serieIndex) {
-      self.options.series[serieIndex].dashStyle = undefined;
-    };
-
-    this.resetName = function(serieIndex) {
-      self.options.series[serieIndex].name = undefined;
+    this.resetSerieProperty = function(index, property) {
+      self.options.series[index][property] = undefined;
     }
   });
