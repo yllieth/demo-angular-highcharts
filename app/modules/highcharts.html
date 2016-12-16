@@ -113,6 +113,14 @@
                     <tab-heading><input type="checkbox" ng-model="Highcharts.series[0].enabled" style="margin-bottom: 0"/>&nbsp;Serie1</tab-heading>
                     <div class="row">
                       <div class="column medium-7 large-9">
+
+                        <!-- Generate new data values -->
+                        <div class="row">
+                          <div class="column">
+                            <a href ng-click="Highcharts.newData(0)">Generate new coordinates</a>
+                          </div>
+                        </div>
+
                         <table>
                           <tr>
                             <th></th>

@@ -58,7 +58,7 @@ angular
     this.options = {
       chart: {
         type: 'line',
-        // animation: true,
+        animation: true,
         inverted: false,
         shadow: false,
         width: null,
@@ -109,6 +109,10 @@ angular
         self.animated = !self.animated;
         return serie.animation = self.animated;
       })
+    };
+
+    this.newData = function(serieIndex) {
+      self.options.series[serieIndex].data = generateValues(self.options.chart.type);
     };
 
     this.resetColor = function(serieIndex) {
