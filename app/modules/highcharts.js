@@ -122,4 +122,8 @@ angular
     this.resetStyle = function(serieIndex) {
       self.options.series[serieIndex].dashStyle = undefined;
     };
+
+    this.resetName = function(serieIndex) {
+      self.options.series[serieIndex].name = undefined;
+    }
   });
