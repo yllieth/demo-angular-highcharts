@@ -37,3 +37,8 @@ button {
 .row.full-width {
   max-width: 100%;
 }
+
+a.disabled {
+  cursor: not-allowed !important;
+  opacity: .5;
+}

@@ -28,10 +28,25 @@ angular
 
     this.allowedTypes = [
       { name: 'line', value: 'line' },
+      { name: 'line with surface', value: 'area' },
       { name: 'curve', value: 'spline' },
+      { name: 'curve with surface', value: 'areaspline' },
       { name: 'histogramme', value: 'bar' },
-      { name: 'camembert', value: 'pie' },
-      { name: 'surface', value: 'area' }
+      { name: 'camembert', value: 'pie' }
+    ];
+
+    this.dashStyles = [
+      { name: 'solid', value: 'solid' },
+      { name: 'ShortDash', value: 'ShortDash' },
+      { name: 'ShortDot', value: 'ShortDot' },
+      { name: 'ShortDashDot', value: 'ShortDashDot' },
+      { name: 'ShortDashDotDot', value: 'ShortDashDotDot' },
+      { name: 'Dot', value: 'Dot' },
+      { name: 'Dash', value: 'Dash' },
+      { name: 'LongDash', value: 'LongDash' },
+      { name: 'DashDot', value: 'DashDot' },
+      { name: 'LongDashDot', value: 'LongDashDot' },
+      { name: 'LongDashDotDot', value: 'LongDashDotDot' }
     ];
 
     this.series = [
@@ -72,6 +87,7 @@ angular
       series: [
         {
           animation: true,
+          color: undefined,
           data: generateValues('line'),
           marker: {
             enabled: true
@@ -93,5 +109,13 @@ angular
         self.animated = !self.animated;
         return serie.animation = self.animated;
       })
+    };
+
+    this.resetColor = function(serieIndex) {
+      self.options.series[serieIndex].color = undefined;
+    };
+
+    this.resetStyle = function(serieIndex) {
+      self.options.series[serieIndex].dashStyle = undefined;
     };
   });

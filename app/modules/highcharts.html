@@ -24,10 +24,10 @@
                 </div>
 
                 <div class="row">
-                  <div class="small-3 columns">
+                  <div class="small-6 large-3 columns">
                     <label for="field-background-color" class="text-right">Background color</label>
                   </div>
-                  <div class="small-9 columns">
+                  <div class="small-6 large-9 columns">
                     <input type="color" id="field-background-color" ng-model="Highcharts.options.chart.backgroundColor">
                   </div>
                 </div>
@@ -131,6 +131,30 @@
                           <div class="column">
                             <input type="checkbox" ng-model="Highcharts.options.series[0].marker.enabled" id="checkbox-serie0-markers">
                             <label for="checkbox-serie0-markers">Markers</label>
+                          </div>
+                        </div>
+
+                        <!-- Color -->
+                        <div class="row align-justify">
+                          <div class="column small-6">Color:</div>
+                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetColor(0)" ng-class="{disabled: Highcharts.options.series[0].color === undefined}">Reset</a></small></div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <input type="color" ng-model="Highcharts.options.series[0].color" id="checkbox-serie0-color">
+                          </div>
+                        </div>
+
+                        <!-- line style -->
+                        <div class="row align-justify">
+                          <div class="column small-6">Style:</div>
+                          <div class="column small-6 text-right"><small><a href ng-click="Highcharts.resetStyle(0)" ng-class="{disabled: Highcharts.options.series[0].dashStyle === undefined}">Reset</a></small></div>
+                        </div>
+                        <div class="row">
+                          <div class="column">
+                            <select ng-model="Highcharts.options.series[0].dashStyle">
+                              <option ng-repeat="option in Highcharts.dashStyles" ng-value="option.value">{{option.name}}</option>
+                            </select>
                           </div>
                         </div>
                       </div>
