@@ -4,31 +4,9 @@ Just enjoy having dynamic and reactive graphs !
 
 **Here is a live demo:**  https://yllieth.github.io/demo-angular-highcharts/app/index.html
 
-<div style="display: flex; flex-direction: row">
-<div style="display: flex; flex: 1; justify-content: center;">
-    <h4>Angular 1.5.0</h4>
-</div>
-<div style="display: flex; flex: 1; justify-content: center;">
-    <h4>Highcharts 1.5.0</h4>
-</div>
-<div style="display: flex; flex: 1; justify-content: center;">
-    <h4>Zurb foundation 6.2</h4>
-</div>
-</div>
-
-<div style="display: flex; flex-direction: row; margin-bottom: 40px">
-<div style="display: flex; flex: 1">
-    <img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/angular.svg">
-</div>
-
-<div style="display: flex; flex: 1">
-    <img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/highcharts.svg">
-</div>
-
-<div style="display: flex; flex: 1">
-    <img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/foundation.svg">
-</div>
-</div>
+| Angular 1.5.0 | Highcharts | Zurb foundation 6.2 |
+|---------------|------------|---------------------|
+|<img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/angular.svg">|<img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/highcharts.svg">|<img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/foundation.svg">|
 
 
 ![Screenshot](screenshots/highcharts.png)
