@@ -18,15 +18,15 @@ Just enjoy having dynamic and reactive graphs !
 
 <div style="display: flex; flex-direction: row; margin-bottom: 40px">
 <div style="display: flex; flex: 1">
-    ![foundation logo](screenshots/angular.svg)
+    <img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/angular.svg">
 </div>
 
 <div style="display: flex; flex: 1">
-    ![foundation logo](screenshots/highcharts.svg)
+    <img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/highcharts.svg">
 </div>
 
 <div style="display: flex; flex: 1">
-    ![foundation logo](screenshots/foundation.svg)
+    <img src="https://cdn.rawgit.com/yllieth/demo-angular-highcharts/master/screenshots/foundation.svg">
 </div>
 </div>
 
